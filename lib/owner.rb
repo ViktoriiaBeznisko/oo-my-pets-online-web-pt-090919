@@ -38,12 +38,12 @@ class Owner
 
   def buy_cat(name)
     new_cat = Cat.new(name, self)
-    @my_pets[:cats] << new_cat
+    @@my_pets[:cats] << new_cat
   end 
   
   def buy_dog(name)
     new_dog = Dog.new(name, self)
-    @my_pets[:dogs] << new_dog
+    @@my_pets[:dogs] << new_dog
   end 
   
   def feed_cats
@@ -54,13 +54,8 @@ class Owner
     Dog.all.each {|dog| dog.mood = "happy"}
   end
   
-  def my_pets
-    @@my_pets
-  end
   
   def sell_pets
-    
-    
     dogs.each do |dog| 
       dog.mood = "nervous"
       dog.owner = nil
@@ -73,7 +68,7 @@ class Owner
   
 
 	def list_pets 
-  "I have #{@my_pets[:dogs].count} dog(s), and #{@my_pets[:cats].count} cat(s)."
+  "I have #{@@my_pets[:dogs].count} dog(s), and #{@@my_pets[:cats].count} cat(s)."
 	end 
   
 end
