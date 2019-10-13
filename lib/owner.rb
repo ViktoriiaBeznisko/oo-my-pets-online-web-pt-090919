@@ -59,6 +59,8 @@ class Owner
     @@my_pets
   end
   
+  
+  @@my_pets = {cats: [], dogs: []}
 
 
 	def list_pets 
