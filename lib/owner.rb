@@ -58,17 +58,7 @@ class Owner
     @@my_pets
   end
   
-  def sell_pets
-    my_pets.each {|pet| pet.clear}
-		 my_pets.each do |pet, arr|
-      arr.map do |pet|
-        pet.mood = 'nervous'
-      end
-      arr.clear
-    end
-  end
-		 	
-  end
+
 
 	def list_pets 
   "I have #{@my_pets[:dogs].count} dog(s), and #{@my_pets[:cats].count} cat(s)."
